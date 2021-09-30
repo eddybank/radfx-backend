@@ -44,7 +44,8 @@ You can configure the Gunicorn command (i.e. to set number of workers) in
 Nginx is configured to proxy pass the application server which it expects to be
 running on local port 5000. You can configure this in `conf/nginx.conf`.
 
-
+Installation
+---
 sudo snap install --classic code
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
