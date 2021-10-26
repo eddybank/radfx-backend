@@ -1,6 +1,7 @@
 # FastAPI JWT Auth
 
 ## Getting Started
+If using windows be sure to open your VSCode editor with administrator privileges first or you will get an 'access denied error
 
 Set up a virtual environment for the project:  
 `python3 -m venv virtualenv`
