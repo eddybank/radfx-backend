@@ -212,7 +212,8 @@ user = {
     "email": "string",
     "verified_at": "2021-11-13T16:40:15.638Z",
     "disabled_at": "2021-11-13T16:40:15.638Z",
-    "deleted_at": "2021-11-13T16:40:15.638Z"
+    "deleted_at": "2021-11-13T16:40:15.638Z",
+    "role": 'integrator'
 }
 
 users = {
@@ -234,7 +235,8 @@ users = {
         "email": "string",
         "verified_at": "2021-11-13T16:40:15.638Z",
         "disabled_at": "2021-11-13T16:40:15.638Z",
-        "deleted_at": "2021-11-13T16:40:15.638Z"
+        "deleted_at": "2021-11-13T16:40:15.638Z",
+        "role": 'integrator'
       }
     ]
 }
@@ -294,7 +296,6 @@ project = {
     "purpose_of_test": "",
     "total_hours": "",
     "vaccume": "",
-    "is_public": "true",
     "status": "not-submitted",
     "created_at": "",
     "updated_at": "",
@@ -305,8 +306,16 @@ project = {
     "test_start": "",
     "test_end": "",
     "requests": [
-        
-    ]
+      {
+        "id": 0,
+        "project_id": 0,
+        "facility_id": 0,
+        "energy_level": "",
+        "ions": "",
+        "integrator_id": 0,
+      }
+    ],
+    "is_public": "true",
 }
 
 projects = {
@@ -338,35 +347,27 @@ projects = {
         "updated_at": "",
         "submitted_at": "",
         "approved_at": "",
+        "scheduled_at": "",
         "completed_at": "",
         "cancelled_at": "",
         "test_start": "",
         "test_end": "",
+        "requests": {
+            {
+                "id": 0,
+                "facility_id": 0,
+                "energy_level": "",
+                "ions": "",
+                "integrator_id": 0,
+            }
+        }
       }
     ]
 }
 
 request = {
     "id": 0,
-    "project": {
-        "id": 0,
-        "testor": {
-            "id": 0,
-            "full_name": "string",
-            "first_name": "string",
-            "last_name": "string",
-            "phone_number": "string",
-            "email": "string",
-        },
-        "project_name": "",
-        "description": "",
-        "program": "",
-        "devices_under_test": "",
-        "purpose_of_test": "",
-        "total_hours": "",
-        "vaccume": "",
-        "is_public": "true",
-    },
+    "project_id": 0,
     "facility_id": 0,
     "energy_level": "",
     "ions": "",
@@ -381,25 +382,7 @@ requests = {
     "data": [
       {
         "id": 0,
-        "project": {
-            "id": 0,
-            "testor": {
-                "id": 0,
-                "full_name": "string",
-                "first_name": "string",
-                "last_name": "string",
-                "phone_number": "string",
-                "email": "string",
-            },
-            "project_name": "",
-            "description": "",
-            "program": "",
-            "devices_under_test": "",
-            "purpose_of_test": "",
-            "total_hours": "",
-            "vaccume": "",
-            "is_public": "true",
-        },
+        "project_id": 0,
         "facility_id": 0,
         "energy_level": "",
         "ions": "",
@@ -407,3 +390,4 @@ requests = {
       }
     ]
 }
+
