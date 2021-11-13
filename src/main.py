@@ -22,6 +22,7 @@ projects = []
 requests = []
 affiliations = []
 
+
 @app.post('/register', status_code=201)
 def register(auth_details: AuthDetails):
     if any(x['username'] == auth_details.username for x in users):
@@ -57,6 +58,7 @@ def unprotected():
 def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
 
+
 @app.post('/facility')
 def post_facility(response_details: Facility):
     facilities.append({
@@ -66,41 +68,51 @@ def post_facility(response_details: Facility):
     })
     return 
 
+
 @app.get('/facility')
 def facility():
     return demo_facility
+
 
 @app.get('/facilities')
 def facilities():
     return demo_facilities 
 
+
 @app.get('/user')
 def user():
     return demo_user
+
 
 @app.get('/users')
 def users():
     return demo_users
 
+
 @app.get('/affilitation')
 def affilitation():
     return demo_affilitation
+
 
 @app.get('/affilitations')
 def affilitations():
     return demo_affilitations
 
+
 @app.get('/project')
 def project():
     return demo_project
+
 
 @app.get('/projects')
 def projects():
     return demo_projects
 
+
 @app.get('/request')
 def request():
     return demo_request
+
 
 @app.get('/requests')
 def requests():
