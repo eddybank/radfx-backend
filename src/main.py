@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from .auth import AuthHandler
-from .schemas import AuthDetails
+from .schemas import AuthDetails, Facility
 from .dummy_models import facility as demo_facility
 from .dummy_models import facilities as demo_facilities
 from .dummy_models import user as demo_user
@@ -18,6 +18,9 @@ app = FastAPI()
 
 auth_handler = AuthHandler()
 users = []
+projects = []
+requests = []
+affiliations = []
 
 @app.post('/register', status_code=201)
 def register(auth_details: AuthDetails):
@@ -53,6 +56,15 @@ def unprotected():
 @app.get('/protected')
 def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
+
+@app.post('/facility')
+def post_facility(response_details: Facility):
+    facilities.append({
+        'username': response_details.name,
+        'password': response_details.full_name,
+        'accelerator': response_details.accelerator
+    })
+    return 
 
 @app.get('/facility')
 def facility():
