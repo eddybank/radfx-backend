@@ -246,7 +246,7 @@ affilitation = {
     "name": "string",
     "full_name": "string",
     "description": "string",
-    "integrator": {
+    "created_by": {
         "id": 0,
         "full_name": "string",
         "first_name": "string",
@@ -267,7 +267,7 @@ affilitations = {
             "name": "string",
             "full_name": "string",
             "description": "string",
-            "integrator": {
+            "created_by": {
                 "id": 0,
                 "full_name": "string",
                 "first_name": "string",
@@ -281,7 +281,7 @@ affilitations = {
 
 project = {
     "id": 0,
-    "testor": {
+    "created_by": {
         "id": 0,
         "full_name": "string",
         "first_name": "string",
@@ -326,7 +326,7 @@ projects = {
     "data": [
       {
         "id": 0,
-        "testor": {
+        "created_by": {
             "id": 0,
             "full_name": "string",
             "first_name": "string",
