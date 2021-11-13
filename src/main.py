@@ -177,7 +177,7 @@ def post_projects(response_details: Projects):
         'completed_at': response_details.completed_at,
         'cancelled_at': response_details.cancelled_at,
         'test_start': response_details.test_start,
-        'test_end': response_details.test_end,
+        'test_end': response_details.test_end
     })
     return
 
@@ -199,7 +199,7 @@ def post_requests(response_details: Requests):
         'page': response_details.page,
         'per_page': response_details.per_page,
         'total_page': response_details.total_page,
-        'total_count': response_details.total_count,
+        'total_count': response_details.total_count
     })
     return
 
