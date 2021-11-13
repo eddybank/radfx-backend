@@ -66,7 +66,7 @@ def post_facility(response_details: Facility):
         'password': response_details.full_name,
         'accelerator': response_details.accelerator
     })
-    return 
+    return {facilities}
 
 
 @app.get('/facility')
