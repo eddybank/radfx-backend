@@ -352,7 +352,7 @@ projects = {
         "cancelled_at": "",
         "test_start": "",
         "test_end": "",
-        "requests": {
+        "requests": [
             {
                 "id": 0,
                 "facility_id": 0,
@@ -360,7 +360,7 @@ projects = {
                 "ions": "",
                 "integrator_id": 0,
             }
-        }
+        ]
       }
     ]
 }
