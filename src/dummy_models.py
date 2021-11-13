@@ -1,14 +1,3 @@
-login = {
-  "email": "user@example.com",
-  "password": "string"
-}
-
-register = {
-  "password": "string",
-  "username": "string",
-  "email": "user@example.com"
-}
-
 facilities = {
   "page": 0,
   "per_page": 0,
