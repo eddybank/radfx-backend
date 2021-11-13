@@ -1,5 +1,5 @@
 facility = { 
-    "id": 1,
+    "id": 0,
     "name": "NSBL",
     "full_name": "NASA Space Radiation Laboratory",
     "description": "",
@@ -53,7 +53,7 @@ facilities = {
   "total_count": 0,
   "data": [
     { 
-        "id": 1,
+        "id": 0,
         "name": "NSBL",
         "full_name": "NASA Space Radiation Laboratory",
         "description": "",
@@ -74,7 +74,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "thur": {
+            "thu": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
@@ -101,7 +101,7 @@ facilities = {
         }
     },
     { 
-        "id": 2, 
+        "id": 1, 
         "name": "TAMU",
         "full_name": "Texas A&M University Accelerator Laboratory",
         "description": "",
@@ -112,32 +112,32 @@ facilities = {
                 "open": "",
                 "close": "",
             },
-            "tues": {
+            "tue": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
-            "wedness": {
+            "wed": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
-            "thurs": {
-                "is_open": "true",
-                "open": "",
-                "close": "",
-            },
-            "fri": {
-                "is_open": "true",
-                "open": "",
-                "close": "",
-            },
-            "satur": {
+            "thu": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
             "fri": {
+                "is_open": "true",
+                "open": "",
+                "close": "",
+            },
+            "sat": {
+                "is_open": "true",
+                "open": "",
+                "close": "",
+            },
+            "sun": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
@@ -149,7 +149,7 @@ facilities = {
         }
     },
     { 
-        "id": 3,
+        "id": 2,
         "name": "LBNL",
         "full_name": "Lawrence Berkeley National Laboratory",
         "description": "description for LBNL",
@@ -160,32 +160,32 @@ facilities = {
                 "open": "",
                 "close": "",
             },
-            "tues": {
+            "tue": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
-            "wedness": {
+            "wed": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
-            "thurs": {
-                "is_open": "true",
-                "open": "",
-                "close": "",
-            },
-            "fri": {
-                "is_open": "true",
-                "open": "",
-                "close": "",
-            },
-            "satur": {
+            "thu": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
             },
             "fri": {
+                "is_open": "true",
+                "open": "",
+                "close": "",
+            },
+            "sat": {
+                "is_open": "true",
+                "open": "",
+                "close": "",
+            },
+            "sun": {
                 "is_open": "true",
                 "open": "",
                 "close": "",
@@ -295,8 +295,15 @@ project = {
     "total_hours": "",
     "vaccume": "",
     "is_public": "true",
+    "status": "not-submitted",
     "created_at": "",
     "updated_at": "",
+    "submitted_at": "",
+    "approved_at": "",
+    "completed_at": "",
+    "cancelled_at": "",
+    "test_start": "",
+    "test_end": "",
     "requests": [
         
     ]
@@ -326,8 +333,15 @@ projects = {
         "total_hours": "",
         "vaccume": "",
         "is_public": "true",
+        "status": "not-submitted",
         "created_at": "",
         "updated_at": "",
+        "submitted_at": "",
+        "approved_at": "",
+        "completed_at": "",
+        "cancelled_at": "",
+        "test_start": "",
+        "test_end": "",
       }
     ]
 }
@@ -355,13 +369,8 @@ request = {
     },
     "facility_id": 0,
     "energy_level": "",
-    "requested_ions": "",
-    "creator_id": 0,
+    "ions": "",
     "integrator_id": 0,
-    "status": "requested",
-    "created_at": "",
-    "updated_at": "",
-    "time_slot_id": ""
 }
 
 requests = {
@@ -393,20 +402,8 @@ requests = {
         },
         "facility_id": 0,
         "energy_level": "",
-        "requested_ions": "",
-        "creator_id": 0,
+        "ions": "",
         "integrator_id": 0,
-        "status": "requested",
-        "created_at": "",
-        "updated_at": "",
-        "time_slot_id": 0
       }
     ]
-}
-
-time_slot = {
-    "id":0,
-    "start": "",
-    "end": "",
-    "request_id": 0
 }
