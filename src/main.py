@@ -68,7 +68,7 @@ def post_facility(response_details: Facility):
         'description': response_details.description,
         'accelerator': response_details.accelerator
     })
-    return facilities
+    return
 
 
 @app.get('/facility')
