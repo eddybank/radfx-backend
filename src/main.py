@@ -24,7 +24,7 @@ affiliations = []
 facilities = []
 
 
-@app.post('/register', status_code=201)
+@app.post('/register', status_code=200)
 def register(auth_details: AuthDetails):
     if any(x['username'] == auth_details.username for x in users):
         raise HTTPException(status_code=400, detail='Username is taken')
@@ -60,7 +60,7 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
 
 
-@app.post('/facility')
+@app.post('/facility', status_code=200)
 def post_facility(response_details: Facility):
     facilities.append({
         'name': response_details.name,
