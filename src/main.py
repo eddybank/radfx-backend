@@ -1,6 +1,16 @@
 from fastapi import FastAPI, Depends, HTTPException
 from .auth import AuthHandler
 from .schemas import AuthDetails
+from .dummy_models import facility as demo_facility
+from .dummy_models import facilities as demo_facilities
+from .dummy_models import user as demo_user
+from .dummy_models import users as demo_users
+from .dummy_models import affilitation as demo_affilitation
+from .dummy_models import affilitations as demo_affilitations
+from .dummy_models import project as demo_project
+from .dummy_models import projects as demo_projects
+from .dummy_models import request as demo_request
+from .dummy_models import requests as demo_requests
 
 
 app = FastAPI()
@@ -44,3 +54,42 @@ def unprotected():
 def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
 
+@app.get('/facility')
+def facility():
+    return demo_facility
+
+@app.get('/facilities')
+def facilities():
+    return demo_facilities 
+
+@app.get('/user')
+def user():
+    return demo_user
+
+@app.get('/users')
+def users():
+    return demo_users
+
+@app.get('/affilitation')
+def affilitation():
+    return demo_affilitation
+
+@app.get('/affilitations')
+def affilitations():
+    return demo_affilitations
+
+@app.get('/project')
+def project():
+    return demo_project
+
+@app.get('/projects')
+def projects():
+    return demo_projects
+
+@app.get('/request')
+def request():
+    return demo_request
+
+@app.get('/requests')
+def requests():
+    return demo_requests
