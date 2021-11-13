@@ -16,7 +16,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "tues": {
+            "tue": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
@@ -26,7 +26,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "thurs": {
+            "thur": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
@@ -41,7 +41,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "fri": {
+            "sun": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
