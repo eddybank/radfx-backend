@@ -241,7 +241,7 @@ users = {
     ]
 }
 
-affilitation = {
+affiliation = {
     "id": 0,
     "name": "string",
     "full_name": "string",
@@ -295,7 +295,7 @@ project = {
     "devices_under_test": "",
     "purpose_of_test": "",
     "total_hours": "",
-    "vaccume": "",
+    "vacuum": "",
     "status": "not-submitted",
     "created_at": "",
     "updated_at": "",
