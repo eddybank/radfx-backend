@@ -21,7 +21,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "wedness": {
+            "wed": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
@@ -36,7 +36,7 @@ facilities = {
                 "open": "0800",
                 "close": "0000",
             },
-            "satur": {
+            "sat": {
                 "is_open": "true",
                 "open": "0800",
                 "close": "0000",
