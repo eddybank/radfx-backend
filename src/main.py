@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from .auth import AuthHandler
-from .schemas import AuthDetails, Facility
+from .schemas import AuthDetails, Facility, Facilities, User, Users, Affiliation, Affiliations, Project, Projects, Request, Requests
 from .dummy_models import facility as demo_facility
 from .dummy_models import facilities as demo_facilities
 from .dummy_models import user as demo_user
