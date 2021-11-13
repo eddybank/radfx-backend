@@ -1,3 +1,51 @@
+facility = { 
+    "id": 1,
+    "name": "NSBL",
+    "full_name": "NASA Space Radiation Laboratory",
+    "description": "",
+    "accelerator type": "Synchrotron",
+    "hours_of_operation":  {
+        "mon": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "tue": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "wed": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "thur": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "fri": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "sat": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+        "sun": {
+            "is_open": "true",
+            "open": "0800",
+            "close": "0000",
+        },
+    },
+    "switching_time": {
+        "switch_ions": "3 minutes",
+        "switch_cocktail": "4 hours"
+    }
+},
 facilities = {
   "page": 0,
   "per_page": 0,
