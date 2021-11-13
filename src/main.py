@@ -63,8 +63,9 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
 @app.post('/facility')
 def post_facility(response_details: Facility):
     facilities.append({
-        'username': response_details.name,
-        'password': response_details.full_name,
+        'name': response_details.name,
+        'full_name': response_details.full_name,
+        'description': response_details.description,
         'accelerator': response_details.accelerator
     })
     return facilities
