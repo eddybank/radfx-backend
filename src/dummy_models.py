@@ -3,7 +3,7 @@ facility = {
     "name": "NSBL",
     "full_name": "NASA Space Radiation Laboratory",
     "description": "",
-    "accelerator type": "Synchrotron",
+    "accelerator": "Synchrotron",
     "hours_of_operation":  {
         "mon": {
             "is_open": "true",
