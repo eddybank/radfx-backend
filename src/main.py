@@ -21,6 +21,7 @@ users = []
 projects = []
 requests = []
 affiliations = []
+facilities = []
 
 
 @app.post('/register', status_code=201)
@@ -75,7 +76,7 @@ def facility():
 
 
 @app.get('/facilities')
-def facilities():
+def get_facilities():
     return demo_facilities 
 
 
