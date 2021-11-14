@@ -91,7 +91,7 @@ def post_facility(response_details: Facility):
         'description': response_details.description,
         'accelerator': response_details.accelerator
     })
-    return
+    return 
 
 
 @app.get('/facility/{facility_id}')
@@ -113,7 +113,7 @@ def get_user():
 
 @app.get('/users')
 def get_users():
-    return demo_users
+    return users
 
 
 @app.post('/affiliation', status_code=200)
@@ -127,15 +127,15 @@ def post_affiliation(response_details: Affiliation):
     return
 
 
-@app.get('/affilitation/{affiliation_id}')
+@app.get('/affiliation/{affiliation_id}')
 def get_affilitation():
     affiliation_id = int
     return [db for db in projects if db.get('id')==affiliation_id]
 
 
-@app.get('/affilitations')
+@app.get('/affiliations')
 def get_affilitations():
-    return demo_affilitations
+    return demo_affiliations
 
 
 @app.post('/project', status_code=200)
