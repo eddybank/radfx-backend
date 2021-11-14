@@ -64,7 +64,7 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
 @app.post('/user', status_code=200)
 def post_user(response_details: User):
     users.append({
-        'id': response_details.id,
+        'id': users.len(),
         'affiliation_id': response_details.affiliation_id,
         'user_name': response_details.user_name,
         'full_name': response_details.full_name,
