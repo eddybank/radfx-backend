@@ -108,7 +108,7 @@ def get_facilities():
 @app.get("/user/{user_id}", status_code=200)
 async def get_user( user_id):
     res = [db for db in projects if db.get('id')==user_id]
-    return user_id
+    return res
 
 
 @app.get('/users')
