@@ -111,7 +111,7 @@ def post_users(response_details: Users):
 
 @app.post('/affiliation', status_code=200)
 def post_affiliation(response_details: Affiliation):
-    affiliation.append({
+    affiliations.append({
         'id': response_details.id,
         'name': response_details.name,
         'full_name': response_details.full_name,
