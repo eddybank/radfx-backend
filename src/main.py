@@ -13,7 +13,7 @@ from .dummy_models import request as demo_request
 from .dummy_models import requests as demo_requests
 
 
-app = FastAPI()
+app = FastAPI(title="Radfx API")
 
 
 auth_handler = AuthHandler()
@@ -60,21 +60,11 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
 
 
-@app.post('/facility', status_code=200)
-def post_facility(response_details: Facility):
-    facilities.append({
-        'name': response_details.name,
-        'full_name': response_details.full_name,
-        'description': response_details.description,
-        'accelerator': response_details.accelerator
-    })
-    return
-
 
 @app.post('/user', status_code=200)
 def post_user(response_details: User):
     users.append({
-        'id': response_details.id,
+        'id': users.len(),
         'affiliation_id': response_details.per_page,
         'user_name': response_details.user_name,
         'full_name': response_details.full_name,
@@ -91,10 +81,45 @@ def post_user(response_details: User):
     return
 
 
+
+@app.post('/facility', status_code=200)
+def post_facility(response_details: Facility):
+    facilities.append({
+        'id': facilities.len(),
+        'name': response_details.name,
+        'full_name': response_details.full_name,
+        'description': response_details.description,
+        'accelerator': response_details.accelerator
+    })
+    return
+
+
+@app.get('/facility/{facility_id}')
+def get_facility():
+    facility_id = int
+    return [db for db in projects if db.get('id')==facility_id]
+
+
+@app.get('/facilities')
+def get_facilities():
+    return facilities 
+
+
+@app.get('/user/{user_id}')
+def get_user():
+    user_id = int
+    return [db for db in projects if db.get('id')==user_id]
+
+
+@app.get('/users')
+def get_users():
+    return demo_users
+
+
 @app.post('/affiliation', status_code=200)
 def post_affiliation(response_details: Affiliation):
     affiliations.append({
-        'id': response_details.id,
+        'id': affiliations.len(),
         'name': response_details.name,
         'full_name': response_details.full_name,
         'description': response_details.description
@@ -102,10 +127,21 @@ def post_affiliation(response_details: Affiliation):
     return
 
 
+@app.get('/affilitation/{affiliation_id}')
+def get_affilitation():
+    affiliation_id = int
+    return [db for db in projects if db.get('id')==affiliation_id]
+
+
+@app.get('/affilitations')
+def get_affilitations():
+    return demo_affilitations
+
+
 @app.post('/project', status_code=200)
 def post_project(response_details: Project):
     projects.append({
-        'id': response_details.id,
+        'id': projects.len(),
         'project_name': response_details.project_name,
         'description': response_details.description,
         'program': response_details.program,
@@ -126,12 +162,21 @@ def post_project(response_details: Project):
     })
     return
 
+@app.get('/project/{project_id}', status_code=200)
+def get_project():
+    project_id = int
+    return [db for db in projects if db.get('id')==project_id]
 
-@app.post('/request', status_code=200)
+
+@app.get('/project')
+def get_projects():
+    return projects
+
+@app.post('/project/{project_id}/request', status_code=200)
 def post_request(response_details: Request):
     requests.append({
-        'id': response_details.id,
-        'project_id': response_details.project_id,
+        'id': requests.len(),
+        'project_id': int,
         'facility_id': response_details.facility_id,
         'energy_level': response_details.energy_level,
         'ions': response_details.ions,
@@ -139,52 +184,11 @@ def post_request(response_details: Request):
     })
     return
 
-
-@app.get('/facility')
-def facility():
-    return demo_facility
-
-
-@app.get('/facilities')
-def get_facilities():
-    return facilities 
-
-
-@app.get('/user')
-def user():
-    return demo_user
-
-
-@app.get('/users')
-def users():
-    return demo_users
-
-
-@app.get('/affilitation')
-def affilitation():
-    return demo_affilitation
-
-
-@app.get('/affilitations')
-def affilitations():
-    return demo_affilitations
-
-
-@app.get('/project')
-def project():
-    return demo_project
-
-
-@app.get('/projects')
-def projects():
-    return demo_projects
-
-
-@app.get('/request')
-def request():
+@app.get('/project/{project_id}/request/{request_id}')
+def get_request():
     return demo_request
 
 
-@app.get('/requests')
-def requests():
-    return demo_requests
+@app.get('/project/{project_id}/requests')
+def get_requests():
+    return requests
