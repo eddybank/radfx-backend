@@ -105,9 +105,8 @@ def get_facilities():
     return facilities 
 
 
-@app.get('/user/{user_id}')
-def get_user():
-    user_id = int
+@app.get('/user/{user_id}',status_code=200)
+def get_user( user_id: int):
     return [db for db in projects if db.get('id')==user_id]
 
 
