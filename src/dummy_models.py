@@ -256,7 +256,7 @@ affiliation = {
     }
 }
 
-affilitations = {
+affiliations = {
     "page": 0,
     "per_page": 0,
     "total_page": 0,
@@ -340,7 +340,7 @@ projects = {
         "devices_under_test": "",
         "purpose_of_test": "",
         "total_hours": "",
-        "vaccume": "",
+        "vacuum": "",
         "is_public": "true",
         "status": "not-submitted",
         "created_at": "",
