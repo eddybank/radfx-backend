@@ -5,8 +5,8 @@ from .dummy_models import facility as demo_facility
 from .dummy_models import facilities as demo_facilities
 from .dummy_models import user as demo_user
 from .dummy_models import users as demo_users
-from .dummy_models import affilitation as demo_affilitation
-from .dummy_models import affilitations as demo_affilitations
+from .dummy_models import affiliation as demo_affiliation
+from .dummy_models import affiliations as demo_affiliations
 from .dummy_models import project as demo_project
 from .dummy_models import projects as demo_projects
 from .dummy_models import request as demo_request
@@ -160,14 +160,14 @@ def users():
     return demo_users
 
 
-@app.get('/affilitation')
-def affilitation():
-    return demo_affilitation
+@app.get('/affiliation')
+def affiliation():
+    return demo_affiliation
 
 
-@app.get('/affilitations')
-def affilitations():
-    return demo_affilitations
+@app.get('/affiliations')
+def affiliations():
+    return demo_affiliations
 
 
 @app.get('/project')
