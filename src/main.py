@@ -5,8 +5,8 @@ from .dummy_models import facility as demo_facility
 from .dummy_models import facilities as demo_facilities
 from .dummy_models import user as demo_user
 from .dummy_models import users as demo_users
-from .dummy_models import affilitation as demo_affilitation
-from .dummy_models import affilitations as demo_affilitations
+from .dummy_models import affiliation as demo_affiliation
+from .dummy_models import affiliations as demo_affiliations
 from .dummy_models import project as demo_project
 from .dummy_models import projects as demo_projects
 from .dummy_models import request as demo_request
@@ -183,10 +183,6 @@ def post_request(response_details: Request):
         'integrator_id': response_details.integrator_id
     })
     return
-
-@app.get('/project/{project_id}/request/{request_id}')
-def get_request():
-    return demo_request
 
 
 @app.get('/project/{project_id}/requests')
