@@ -1,1 +1,2 @@
-web: gunicorn -w 3 -k uvicorn.workers.UvicornWorker slack:app
+web: uvicorn src.main:app --reload
+
