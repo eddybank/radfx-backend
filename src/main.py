@@ -70,15 +70,6 @@ def post_facility(response_details: Facility):
     })
     return
 
-@app.post('/facilities', status_code=200)
-def post_facilities(response_details: Facilities):
-    facilities.append({
-        'page': response_details.page,
-        'per_page': response_details.per_page,
-        'total_page': response_details.total_page,
-        'total_count': response_details.total_count
-    })
-    return
 
 @app.post('/user', status_code=200)
 def post_user(response_details: User):
@@ -99,15 +90,6 @@ def post_user(response_details: User):
     })
     return
 
-@app.post('/users', status_code=200)
-def post_users(response_details: Users):
-    users.append({
-        'page': response_details.page,
-        'per_page': response_details.per_page,
-        'total_page': response_details.total_page,
-        'total_count': response_details.total_count
-    })
-    return
 
 @app.post('/affiliation', status_code=200)
 def post_affiliation(response_details: Affiliation):
@@ -119,15 +101,6 @@ def post_affiliation(response_details: Affiliation):
     })
     return
 
-@app.post('/affiliations', status_code=200)
-def post_affiliations(response_details: Affiliations):
-    affiliations.append({
-        'page': response_details.page,
-        'per_page': response_details.per_page,
-        'total_page': response_details.total_page,
-        'total_count': response_details.total_count
-    })
-    return
 
 @app.post('/project', status_code=200)
 def post_project(response_details: Project):
@@ -153,33 +126,6 @@ def post_project(response_details: Project):
     })
     return
 
-@app.post('/projects', status_code=200)
-def post_projects(response_details: Projects):
-    projects.append({
-        'page': response_details.page,
-        'per_page': response_details.per_page,
-        'total_page': response_details.total_page,
-        'total_count': response_details.total_count,
-        'project_name': response_details.project_name,
-        'description': response_details.description,
-        'program': response_details.program,
-        'devices_under_test': response_details.devices_under_test,
-        'purpose_of_test': response_details.purpose_of_test,
-        'total_hours': response_details.total_hours,
-        'vacuum': response_details.vacuum,
-        'is_public': response_details.is_public,
-        'status': response_details.status,
-        'created_at': response_details.created_at,
-        'updated_at': response_details.updated_at,
-        'submitted_at': response_details.submitted_at,
-        'approved_at': response_details.approved_at,
-        'scheduled_at': response_details.scheduled_at,
-        'completed_at': response_details.completed_at,
-        'cancelled_at': response_details.cancelled_at,
-        'test_start': response_details.test_start,
-        'test_end': response_details.test_end
-    })
-    return
 
 @app.post('/request', status_code=200)
 def post_request(response_details: Request):
@@ -193,15 +139,6 @@ def post_request(response_details: Request):
     })
     return
 
-@app.post('/requests', status_code=200)
-def post_requests(response_details: Requests):
-    requests.append({
-        'page': response_details.page,
-        'per_page': response_details.per_page,
-        'total_page': response_details.total_page,
-        'total_count': response_details.total_count
-    })
-    return
 
 @app.get('/facility')
 def facility():
