@@ -107,12 +107,7 @@ def get_facilities():
 
 @app.get("/user/{user_id}", status_code=200)
 async def get_user(user_id):
-    def iterator_func(x):
-        for v in x.values():
-            if user_id in v:
-                return True
-        return False
-    return filter(iterator_func, users)
+    return users[user_id]
 
 
 @app.get('/users')
