@@ -75,6 +75,7 @@ class Project(BaseModel):
     updated_at: str
     submitted_at: str
     approved_at: str
+    scheduled_at: str
     completed_at: str
     cancelled_at: str
     test_start: str

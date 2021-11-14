@@ -82,7 +82,7 @@ def post_facilities(response_details: Facilities):
 
 @app.post('/user', status_code=200)
 def post_user(response_details: User):
-    user.append({
+    users.append({
         'id': response_details.id,
         'affiliation_id': response_details.per_page,
         'user_name': response_details.user_name,
@@ -131,7 +131,7 @@ def post_affiliations(response_details: Affiliations):
 
 @app.post('/project', status_code=200)
 def post_project(response_details: Project):
-    project.append({
+    projects.append({
         'id': response_details.id,
         'project_name': response_details.project_name,
         'description': response_details.description,
@@ -183,7 +183,7 @@ def post_projects(response_details: Projects):
 
 @app.post('/request', status_code=200)
 def post_request(response_details: Request):
-    request.append({
+    requests.append({
         'id': response_details.id,
         'project_id': response_details.project_id,
         'facility_id': response_details.facility_id,
