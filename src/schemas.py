@@ -24,7 +24,7 @@ class Facilities(BaseModel):
         
     
 class User(BaseModel):
-    id: str
+    id: int
     affiliation_id: str
     user_name: str
     full_name: str
