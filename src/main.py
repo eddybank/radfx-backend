@@ -107,7 +107,7 @@ def get_facilities():
 
 @app.get("/user/{user_id}", status_code=200)
 async def get_user(user_id):
-    response = [x for x in users if x.id == 30]
+    response = [x for x in users if x.id == user_id]
     return response
 
 
