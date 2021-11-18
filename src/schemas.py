@@ -20,7 +20,7 @@ class Facility(BaseModel):
     
 class User(BaseModel):
     id: int
-    affiliation_id: str
+    affiliation_id: int
     user_name: str
     full_name: str
     first_name: str
