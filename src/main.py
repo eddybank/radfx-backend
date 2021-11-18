@@ -1,16 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from .auth import AuthHandler
 from .schemas import AuthDetails, Facility, Facilities, User, Users, Affiliation, Affiliations, Project, Projects, Request, Requests
-from .dummy_models import facility as demo_facility
-from .dummy_models import facilities as demo_facilities
-from .dummy_models import user as demo_user
-from .dummy_models import users as demo_users
-from .dummy_models import affiliation as demo_affiliation
-from .dummy_models import affiliations as demo_affiliations
-from .dummy_models import project as demo_project
-from .dummy_models import projects as demo_projects
-from .dummy_models import request as demo_request
-from .dummy_models import requests as demo_requests
 
 
 app = FastAPI(title="Radfx API")
@@ -94,10 +84,12 @@ async def update_user(user_id, response_details: User):
 
 @app.delete("/user/{user_id}", status_code=200)
 async def delete_user(user_id):
-    deletion_set = set([user_id])   
-    for i in reversed(range(len(users))):  # thanks to @juanpa.arrivillaga for this bit 
+    deletion_set = set([int(user_id)])  
+    print(deletion_set) 
+    for i in reversed(range(len(users))):
+        print(i) 
         if users[i]['id'] in deletion_set:
-            del users[i]
+            del(users[i])
     return  users
 
 
