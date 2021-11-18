@@ -54,7 +54,7 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
 def post_user(response_details: User):
     users.append({
         'id': len(users),
-        'affiliation_id': response_details.affiliation_id,
+        'affiliation_id': int(response_details.affiliation_id),
         'user_name': response_details.user_name,
         'full_name': response_details.full_name,
         'first_name': response_details.first_name,
