@@ -126,9 +126,16 @@ def update_facility():
     return
 
 
+<<<<<<< HEAD
 @app.delete('/facility/{facility_id}', status_code=200)
 def delete_facility():
     return
+=======
+@app.get("/user/{user_id}", status_code=200)
+async def get_user(user_id):
+    response = [x for x in users if x['id'] == int(user_id)]
+    return response[0]
+>>>>>>> b3ced6ff97b0b74ce1ace487d6b2a6df10f10ba0
 
 
 @app.get('/facilities')
