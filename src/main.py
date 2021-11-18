@@ -247,7 +247,7 @@ def get_request(project_id, request_id, response_details: Request):
     return
 
 
-@app.update('/project/{project_id}/request{request_id}', status_code=200)
+@app.put('/project/{project_id}/request{request_id}', status_code=200)
 def update_request(project_id, request_id, response_details: Request):
     # find request with matching project_id and request_id and replace those values
     return
@@ -259,6 +259,6 @@ def delete_request(project_id, request_id, response_details: Request):
     return
 
 
-@app.get('/project/{project_id}/requests')
+@app.get('/project/{project_id}/request')
 def get_project_requests(project_id):
     return 
