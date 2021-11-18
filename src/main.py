@@ -79,15 +79,33 @@ async def get_user(user_id):
 
 @app.put("/user/{user_id}", status_code=200)
 async def update_user(user_id, response_details: User):
+    deletion_set = set([int(user_id)])  
+    for i in reversed(range(len(users))):
+        if users[i]['id'] in deletion_set:
+            del(users[i])
+    users.append({
+        'id': int(user_id),
+        'affiliation_id': int(response_details.affiliation_id),
+        'user_name': response_details.user_name,
+        'full_name': response_details.full_name,
+        'first_name': response_details.first_name,
+        'last_name': response_details.last_name,
+        'created_at': response_details.created_at,
+        'updated_at': response_details.updated_at,
+        'phone_number': response_details.phone_number,
+        'email': response_details.email,
+        'verified_at': response_details.verified_at,
+        'disabled_at': response_details.disabled_at,
+        'deleted_at': response_details.deleted_at,
+        'role': response_details.role
+    })
     return 
 
 
 @app.delete("/user/{user_id}", status_code=200)
 async def delete_user(user_id):
     deletion_set = set([int(user_id)])  
-    print(deletion_set) 
     for i in reversed(range(len(users))):
-        print(i) 
         if users[i]['id'] in deletion_set:
             del(users[i])
     return  users
@@ -208,7 +226,7 @@ def update_project(project_id, response_details: Project):
 
 @app.delete('/project/{project_id}', status_code=200)
 def delete_project(project_id):
-    deletion_set = set([project_id])   
+    deletion_set = set([int(project_id)])   
     for i in reversed(range(len(projects))):  # thanks to @juanpa.arrivillaga for this bit 
         if projects[i]['id'] in deletion_set:
             del projects[i]
