@@ -126,16 +126,9 @@ def update_facility():
     return
 
 
-<<<<<<< HEAD
 @app.delete('/facility/{facility_id}', status_code=200)
 def delete_facility():
     return
-=======
-@app.get("/user/{user_id}", status_code=200)
-async def get_user(user_id):
-    response = [x for x in users if x['id'] == int(user_id)]
-    return response[0]
->>>>>>> b3ced6ff97b0b74ce1ace487d6b2a6df10f10ba0
 
 
 @app.get('/facilities')
@@ -156,17 +149,17 @@ def post_affiliation(response_details: Affiliation):
 
 
 @app.get('/affiliation/{affiliation_id}')
-def get_affilitation():
+def get_affilitation(affiliation_id):
     response = [x for x in affiliations if x['id'] == int(affiliation_id)]
     return response
 
 
-@app.put('/affiliation/{affiliation_id}')
-def update_affilitation(affiliation_id):
+@app.put('/affiliation/{affiliation_id}', status_code=200)
+def update_affilitation(affiliation_id, response_details: Affiliation):
     return 
 
 @app.delete('/affiliation/{affiliation_id}')
-def delete_affilitation():
+def delete_affilitation(affiliation_id):
     return
 
 @app.get('/affiliations')
@@ -177,7 +170,7 @@ def get_affilitations():
 @app.post('/project', status_code=200)
 def post_project(response_details: Project):
     projects.append({
-        'id': projects.len(),
+        'id': len(projects),
         'project_name': response_details.project_name,
         'description': response_details.description,
         'program': response_details.program,
@@ -199,19 +192,19 @@ def post_project(response_details: Project):
     return
 
 @app.get('/project/{project_id}', status_code=200)
-def get_project():
-    project_id = int
-    return [db for db in projects if db.get('id')==project_id]
+def get_project(project_id):
+    response = [x for x in projects if x['id'] == int(project_id)]
+    return response
 
 
 @app.put('/project/{project_id}', status_code=200)
-def update_project(project_id):
+def update_project(project_id, response_details: Project):
     response = [x for x in projects if x['id'] == int(project_id)]
     return response
 
 
 @app.delete('/project/{project_id}', status_code=200)
-def delete_project():
+def delete_project(project_id):
     return 
 
 
@@ -221,10 +214,10 @@ def get_projects():
 
 
 @app.post('/project/{project_id}/request', status_code=200)
-def post_request(response_details: Request):
+def post_request(project_id, response_details: Request):
     requests.append({
         'id': len(requests),
-        'project_id': response_details.project_id,
+        'project_id': project_id,
         'facility_id': response_details.facility_id,
         'energy_level': response_details.energy_level,
         'ions': response_details.ions,
@@ -232,43 +225,19 @@ def post_request(response_details: Request):
     })
     return
 
-@app.get('/project/{project_id}/request', status_code=200)
-def get_request(response_details: Request):
-    requests.append({
-        'id': requests.len(),
-        'project_id': int,
-        'facility_id': response_details.facility_id,
-        'energy_level': response_details.energy_level,
-        'ions': response_details.ions,
-        'integrator_id': response_details.integrator_id
-    })
+@app.get('/project/{project_id}/request/{request_id}', status_code=200)
+def get_request(project_id, request_id, response_details: Request):
     return
 
-@app.update('/project/{project_id}/request', status_code=200)
-def update_request(response_details: Request):
-    requests.append({
-        'id': requests.len(),
-        'project_id': int,
-        'facility_id': response_details.facility_id,
-        'energy_level': response_details.energy_level,
-        'ions': response_details.ions,
-        'integrator_id': response_details.integrator_id
-    })
+@app.update('/project/{project_id}/request{request_id}', status_code=200)
+def update_request(project_id, request_id, response_details: Request):
     return
 
-@app.delete('/project/{project_id}/request', status_code=200)
-def delete_request(response_details: Request):
-    requests.append({
-        'id': requests.len(),
-        'project_id': int,
-        'facility_id': response_details.facility_id,
-        'energy_level': response_details.energy_level,
-        'ions': response_details.ions,
-        'integrator_id': response_details.integrator_id
-    })
+@app.delete('/project/{project_id}/request/{request_id}', status_code=200)
+def delete_request(project_id, request_id, response_details: Request):
     return
 
 
 @app.get('/project/{project_id}/requests')
-def get_requests():
-    return requests
+def get_project_requests(project_id):
+    return 
