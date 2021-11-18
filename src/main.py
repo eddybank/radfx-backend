@@ -60,7 +60,6 @@ def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
 
 
-
 @app.post('/user', status_code=200)
 def post_user(response_details: User):
     users.append({
@@ -68,6 +67,7 @@ def post_user(response_details: User):
         'affiliation_id': response_details.affiliation_id,
         'user_name': response_details.user_name,
         'full_name': response_details.full_name,
+        'first_name': response_details.first_name,
         'last_name': response_details.last_name,
         'created_at': response_details.created_at,
         'updated_at': response_details.updated_at,
@@ -81,34 +81,20 @@ def post_user(response_details: User):
     return
 
 
-
-@app.post('/facility', status_code=200)
-def post_facility(response_details: Facility):
-    facilities.append({
-        'id': facilities.len(),
-        'name': response_details.name,
-        'full_name': response_details.full_name,
-        'description': response_details.description,
-        'accelerator': response_details.accelerator
-    })
-    return 
-
-
-@app.get('/facility/{facility_id}')
-def get_facility():
-    facility_id = int
-    return [db for db in projects if db.get('id')==facility_id]
-
-
-@app.get('/facilities')
-def get_facilities():
-    return facilities 
-
-
 @app.get("/user/{user_id}", status_code=200)
 async def get_user(user_id):
     response = [x for x in users if x['id'] == int(user_id)]
     return response
+
+
+@app.put("/user/{user_id}", status_code=200)
+async def update_user(user_id):
+    return 
+
+
+@app.delete("/user/{user_id}", status_code=200)
+async def delete_user(user_id):
+    return 
 
 
 @app.get('/users')
@@ -116,10 +102,45 @@ def get_users():
     return users
 
 
+@app.post('/facility', status_code=200)
+def post_facility(response_details: Facility):
+    facilities.append({
+        'id': len(facilities),
+        'name': response_details.name,
+        'full_name': response_details.full_name,
+        'description': response_details.description,
+        'accelerator': response_details.accelerator,
+        'hours_of_operation': response_details.hours_of_operation
+    })
+    return 
+
+
+@app.get('/facility/{facility_id}', status_code=200)
+def get_facility(facility_id):
+    response = [x for x in facilities if x['id'] == int(facility_id)]
+    return response
+
+
+@app.put('/facility/{facility_id}', status_code=200)
+def update_facility():
+    return
+
+
+@app.delete('/facility/{facility_id}', status_code=200)
+def delete_facility():
+    return
+
+
+@app.get('/facilities')
+def get_facilities():
+    return facilities 
+
+
+
 @app.post('/affiliation', status_code=200)
 def post_affiliation(response_details: Affiliation):
     affiliations.append({
-        'id': affiliations.len(),
+        'id': len(affiliations),
         'name': response_details.name,
         'full_name': response_details.full_name,
         'description': response_details.description
@@ -129,13 +150,21 @@ def post_affiliation(response_details: Affiliation):
 
 @app.get('/affiliation/{affiliation_id}')
 def get_affilitation():
-    affiliation_id = int
-    return [db for db in projects if db.get('id')==affiliation_id]
+    response = [x for x in affiliations if x['id'] == int(affiliation_id)]
+    return response
 
+
+@app.put('/affiliation/{affiliation_id}')
+def update_affilitation(affiliation_id):
+    return 
+
+@app.delete('/affiliation/{affiliation_id}')
+def delete_affilitation():
+    return
 
 @app.get('/affiliations')
 def get_affilitations():
-    return demo_affiliations
+    return affiliations
 
 
 @app.post('/project', status_code=200)
@@ -168,12 +197,60 @@ def get_project():
     return [db for db in projects if db.get('id')==project_id]
 
 
+@app.put('/project/{project_id}', status_code=200)
+def update_project(project_id):
+    response = [x for x in projects if x['id'] == int(project_id)]
+    return response
+
+
+@app.delete('/project/{project_id}', status_code=200)
+def delete_project():
+    return 
+
+
 @app.get('/project')
 def get_projects():
     return projects
 
+
 @app.post('/project/{project_id}/request', status_code=200)
 def post_request(response_details: Request):
+    requests.append({
+        'id': len(requests),
+        'project_id': response_details.project_id,
+        'facility_id': response_details.facility_id,
+        'energy_level': response_details.energy_level,
+        'ions': response_details.ions,
+        'integrator_id': response_details.integrator_id
+    })
+    return
+
+@app.get('/project/{project_id}/request', status_code=200)
+def get_request(response_details: Request):
+    requests.append({
+        'id': requests.len(),
+        'project_id': int,
+        'facility_id': response_details.facility_id,
+        'energy_level': response_details.energy_level,
+        'ions': response_details.ions,
+        'integrator_id': response_details.integrator_id
+    })
+    return
+
+@app.update('/project/{project_id}/request', status_code=200)
+def update_request(response_details: Request):
+    requests.append({
+        'id': requests.len(),
+        'project_id': int,
+        'facility_id': response_details.facility_id,
+        'energy_level': response_details.energy_level,
+        'ions': response_details.ions,
+        'integrator_id': response_details.integrator_id
+    })
+    return
+
+@app.delete('/project/{project_id}/request', status_code=200)
+def delete_request(response_details: Request):
     requests.append({
         'id': requests.len(),
         'project_id': int,
