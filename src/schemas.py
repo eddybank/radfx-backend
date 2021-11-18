@@ -16,12 +16,6 @@ class Facility(BaseModel):
     accelerator: str
     hours_of_operation: str
 
-class Facilities(BaseModel):
-    page: str
-    per_page: str
-    total_page: str
-    total_count: str
-    #data: []
         
     
 class User(BaseModel):
@@ -40,12 +34,6 @@ class User(BaseModel):
     deleted_at: str
     role: str
     
-class Users(BaseModel):
-    page: str
-    per_page: str
-    total_page: str
-    total_count: str
-    #data: []
 
 class Affiliation(BaseModel):
     id: str
@@ -54,12 +42,6 @@ class Affiliation(BaseModel):
     description: str
     #created_by: {}
     
-class Affiliations(BaseModel):
-    page: str
-    per_page: str
-    total_page: str
-    total_count: str
-    #data: []
     
 class Project(BaseModel):
     id: str
@@ -84,13 +66,6 @@ class Project(BaseModel):
     #requests: []
     is_public: str
     
-class Projects(BaseModel):
-    page: str
-    per_page: str
-    total_page: str
-    total_count: str
-    #data: []
-    
 class Request(BaseModel):
     id: int
     project_id: int
@@ -99,9 +74,3 @@ class Request(BaseModel):
     ions: str
     integrator_id: str
     
-class Requests(BaseModel):
-    page: str
-    per_page: str
-    total_page: str
-    total_count: str
-    #data: []

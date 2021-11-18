@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from .auth import AuthHandler
-from .schemas import AuthDetails, Facility, Facilities, User, Users, Affiliation, Affiliations, Project, Projects, Request, Requests
+from .schemas import AuthDetails, Facility, User, Affiliation, Project, Request
 
 
 app = FastAPI(title="Radfx API")
