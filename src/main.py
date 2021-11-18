@@ -124,8 +124,8 @@ def update_facility(facility_id, response_details: Facility):
 
 @app.delete('/facility/{facility_id}', status_code=200)
 def delete_facility(facility_id):
-    deletion_set = set([facility_id])   
-    for i in reversed(range(len(facilities))):  # thanks to @juanpa.arrivillaga for this bit 
+    deletion_set = set([int(facility_id)])   
+    for i in reversed(range(len(facilities))):
         if facilities[i]['id'] in deletion_set:
             del facilities[i]
     return  facilities
@@ -160,7 +160,7 @@ def update_affilitation(affiliation_id, response_details: Affiliation):
 
 @app.delete('/affiliation/{affiliation_id}')
 def delete_affilitation(affiliation_id):
-    deletion_set = set([affiliation_id])   
+    deletion_set = set([int(affiliation_id)])   
     for i in reversed(range(len(affiliations))):  # thanks to @juanpa.arrivillaga for this bit 
         if affiliations[i]['id'] in deletion_set:
             del affiliations[i]
@@ -224,7 +224,7 @@ def get_projects():
 def post_request(project_id, response_details: Request):
     requests.append({
         'id': len(requests),
-        'project_id': project_id,
+        'project_id': int(project_id),
         'facility_id': response_details.facility_id,
         'energy_level': response_details.energy_level,
         'ions': response_details.ions,

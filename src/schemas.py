@@ -9,6 +9,7 @@ class AuthDetails(BaseModel):
     password: str
 
 class Facility(BaseModel):
+    id: int
     name: str
     full_name: str
     description: str
@@ -91,8 +92,8 @@ class Projects(BaseModel):
     #data: []
     
 class Request(BaseModel):
-    id: str
-    project_id: str
+    id: int
+    project_id: int
     facility_id: str
     energy_level: str
     ions: str
