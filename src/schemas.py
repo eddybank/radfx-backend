@@ -44,7 +44,7 @@ class Affiliation(BaseModel):
     
     
 class Project(BaseModel):
-    id: str
+    id: int
     #created_by: {}
     project_name: str
     description: str
